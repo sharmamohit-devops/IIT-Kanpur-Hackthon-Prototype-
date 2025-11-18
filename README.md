@@ -12,7 +12,7 @@
 
 ## 📸 **Project Preview**
 
-![Sampark Preview](./public/Screenshot-2025-11-18-204933.png)
+![Sampark Preview](./public/Screenshot 2025-11-18-204933.png)
 
 
 > Place the screenshot in your **root folder** or **/public** and ensure the filename matches:  
