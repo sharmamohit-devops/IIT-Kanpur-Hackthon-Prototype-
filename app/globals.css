@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+:root {
+  /* Light mode color palette inspired by Odoo */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --card: #F8F9FA;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #0066CC;
+  --primary-foreground: #FFFFFF;
+  --secondary: #6200EA;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F0F2F5;
+  --muted-foreground: #6C757D;
+  --accent: #00A4EF;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC3545;
+  --destructive-foreground: #FFFFFF;
+  --success: #28A745;
+  --warning: #FFC107;
+  --border: #E9ECEF;
+  --input: #F8F9FA;
+  --ring: #0066CC;
+  --chart-1: #0066CC;
+  --chart-2: #6200EA;
+  --chart-3: #00A4EF;
+  --chart-4: #FFC107;
+  --chart-5: #DC3545;
+  --radius: 0.5rem;
+  --sidebar: #F8F9FA;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #0066CC;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #6200EA;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E9ECEF;
+  --sidebar-ring: #0066CC;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-border shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .soft-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .soft-shadow-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+  
+  .gradient-card {
+    @apply bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5;
+  }
+}
+
+@layer utilities {
+  @keyframes bubblePulse {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.35;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.75;
+    }
+    100% {
+      transform: scale(0.95);
+      opacity: 0.35;
+    }
+  }
+
+  .animate-bubble {
+    animation: bubblePulse 6s ease-in-out infinite;
+  }
+}
